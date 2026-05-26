@@ -152,7 +152,7 @@ export default function EvoCoreChat({
         <section className="evo-card overflow-hidden">
           <div className="border-b border-white/10 p-6">
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
                 {icon}
               </div>
 
@@ -198,7 +198,7 @@ export default function EvoCoreChat({
                     <div
                       className={`rounded-3xl border p-4 text-sm leading-6 ${
                         item.role === "user"
-                          ? "border-[#6431FD]/30 bg-[#6431FD]/20 text-white"
+                          ? "border-[#6431FD]/30 bg-[#8B39FB]/20 text-white"
                           : "border-white/10 bg-white/[0.035] text-white/72"
                       }`}
                     >
@@ -232,7 +232,7 @@ export default function EvoCoreChat({
                 type="button"
                 disabled={busy}
                 onClick={() => sendMessage()}
-                className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#6431FD] text-white transition hover:opacity-90 disabled:opacity-50"
+                className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#8B39FB] text-white transition hover:opacity-90 disabled:opacity-50"
               >
                 <Send size={17} />
               </button>
@@ -253,7 +253,7 @@ export default function EvoCoreChat({
                   key={item}
                   type="button"
                   onClick={() => sendMessage(item)}
-                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-left text-sm text-white/60 transition hover:border-[#6431FD]/30 hover:bg-[#6431FD]/10 hover:text-white"
+                  className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-left text-sm text-white/60 transition hover:border-[#6431FD]/30 hover:bg-[#8B39FB]/10 hover:text-white"
                 >
                   {item}
                 </button>
@@ -297,7 +297,7 @@ function StructuredPanel({ data }: { data: StructuredResponse }) {
           )}
         </div>
 
-        <div className="rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-xs font-semibold text-[#C4B5FD]">
+        <div className="rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-xs font-semibold text-[#C4B5FD]">
           Live data
         </div>
       </div>
@@ -402,7 +402,7 @@ function StructuredPanel({ data }: { data: StructuredResponse }) {
       )}
 
       {data.keyTakeaways && data.keyTakeaways.length > 0 && (
-        <div className="mt-6 rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 p-4">
+        <div className="mt-6 rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 p-4">
           <div className="text-sm font-semibold text-[#C4B5FD]">
             Key Takeaways
           </div>
@@ -428,7 +428,7 @@ function StructuredPanel({ data }: { data: StructuredResponse }) {
 
 function Pill({ label }: { label: string }) {
   return (
-    <span className="rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-xs font-semibold text-[#C4B5FD]">
+    <span className="rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-xs font-semibold text-[#C4B5FD]">
       {label}
     </span>
   );

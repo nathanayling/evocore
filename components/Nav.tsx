@@ -96,7 +96,7 @@ export default function Nav() {
             {!user ? (
               <Link
                 href="/login"
-                className="ml-2 inline-flex items-center gap-2 rounded-xl bg-[#6431FD] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
+                className="ml-2 inline-flex items-center gap-2 rounded-xl bg-[#8B39FB] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 <Bot size={16} />
                 <span>Launch EvoCore</span>
@@ -108,7 +108,7 @@ export default function Nav() {
                   onClick={() => setUserMenuOpen((value) => !value)}
                   className="inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-white/80 transition hover:bg-white/[0.07] hover:text-white"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6431FD] text-xs font-bold text-white">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#8B39FB] text-xs font-bold text-white">
                     {initials}
                   </span>
 
@@ -169,7 +169,7 @@ export default function Nav() {
               ) : (
                 <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
                   <div className="mb-2 flex items-center gap-3 px-2 py-2">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6431FD] text-xs font-bold text-white">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#8B39FB] text-xs font-bold text-white">
                       {initials}
                     </span>
                     <div className="min-w-0">

@@ -87,7 +87,7 @@ export default function HomePage() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.05fr_.95fr] md:items-center md:py-28">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/25 bg-[#6431FD]/10 px-3 py-1 text-sm text-[#C4B5FD]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/25 bg-[#8B39FB]/10 px-3 py-1 text-sm text-[#C4B5FD]">
               <Sparkles size={14} />
               <span>The intelligence layer behind Evo Sports Intelligence</span>
             </div>
@@ -138,7 +138,7 @@ export default function HomePage() {
           </div>
 
           <div className="relative">
-            <div className="absolute -inset-6 rounded-[2rem] bg-[#6431FD]/20 blur-3xl" />
+            <div className="absolute -inset-6 rounded-[2rem] bg-[#8B39FB]/20 blur-3xl" />
 
             <div className="evo-card relative p-5 md:p-6">
               <div className="mb-5 flex items-center justify-between">
@@ -149,14 +149,14 @@ export default function HomePage() {
                   <h2 className="mt-2 text-2xl font-semibold">Ask EvoCore</h2>
                 </div>
 
-                <div className="rounded-full border border-[#6431FD]/25 bg-[#6431FD]/10 px-3 py-1 text-xs font-semibold text-[#C4B5FD]">
+                <div className="rounded-full border border-[#6431FD]/25 bg-[#8B39FB]/10 px-3 py-1 text-xs font-semibold text-[#C4B5FD]">
                   Preview
                 </div>
               </div>
 
               <div className="rounded-3xl border border-white/10 bg-black/35 p-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#6431FD]/15 text-[#C4B5FD]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[#8B39FB]/15 text-[#C4B5FD]">
                     <Bot size={19} />
                   </div>
 
@@ -171,7 +171,7 @@ export default function HomePage() {
                       {prompts.map((prompt) => (
                         <button
                           key={prompt}
-                          className="rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-left text-sm text-white/65 transition hover:border-[#6431FD]/30 hover:bg-[#6431FD]/10 hover:text-white"
+                          className="rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-left text-sm text-white/65 transition hover:border-[#6431FD]/30 hover:bg-[#8B39FB]/10 hover:text-white"
                         >
                           {prompt}
                         </button>
@@ -244,7 +244,7 @@ export default function HomePage() {
                 className="evo-card evo-card-hover group p-6"
               >
                 <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
                     <Icon size={22} />
                   </div>
 
@@ -277,11 +277,11 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-6 pb-20">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0B0D14] p-6 md:p-10">
-          <div className="absolute right-[-120px] top-[-160px] h-80 w-80 rounded-full bg-[#6431FD]/18 blur-3xl" />
+          <div className="absolute right-[-120px] top-[-160px] h-80 w-80 rounded-full bg-[#8B39FB]/18 blur-3xl" />
 
           <div className="relative grid gap-10 md:grid-cols-[.9fr_1.1fr] md:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-sm text-[#C4B5FD]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-sm text-[#C4B5FD]">
                 <BrainCircuit size={14} />
                 <span>Core capabilities</span>
               </div>
@@ -306,7 +306,7 @@ export default function HomePage() {
                     key={item.title}
                     className="rounded-3xl border border-white/10 bg-white/[0.03] p-5"
                   >
-                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
                       <Icon size={20} />
                     </div>
 
@@ -324,7 +324,7 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="rounded-[2rem] border border-[#6431FD]/20 bg-[#6431FD]/10 p-8 text-center md:p-12">
+        <div className="rounded-[2rem] border border-[#6431FD]/20 bg-[#8B39FB]/10 p-8 text-center md:p-12">
           <h2 className="text-3xl font-semibold md:text-4xl">
             One AI layer for the whole Evo ecosystem.
           </h2>

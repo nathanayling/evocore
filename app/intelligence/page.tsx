@@ -53,7 +53,7 @@ export default function IntelligencePage() {
 
         <div className="relative mx-auto max-w-7xl px-6 py-18 md:py-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-sm text-[#C4B5FD]">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-sm text-[#C4B5FD]">
               <BrainCircuit size={14} />
               EvoCore Intelligence
             </div>
@@ -94,7 +94,7 @@ export default function IntelligencePage() {
                 className="evo-card evo-card-hover p-6"
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
                     <Icon size={22} />
                   </div>
 
@@ -131,11 +131,11 @@ export default function IntelligencePage() {
 
       <section className="mx-auto max-w-7xl px-6 pb-20">
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#0B0D14] p-6 md:p-10">
-          <div className="absolute right-[-120px] top-[-160px] h-80 w-80 rounded-full bg-[#6431FD]/18 blur-3xl" />
+          <div className="absolute right-[-120px] top-[-160px] h-80 w-80 rounded-full bg-[#8B39FB]/18 blur-3xl" />
 
           <div className="relative grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-sm text-[#C4B5FD]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-sm text-[#C4B5FD]">
                 <Zap size={14} />
                 How EvoCore works
               </div>

@@ -60,7 +60,7 @@ export default function LoginPage() {
 
       <section className="relative mx-auto grid min-h-[calc(100vh-180px)] max-w-7xl gap-10 px-6 py-16 md:grid-cols-[.95fr_1.05fr] md:items-center">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-sm text-[#C4B5FD]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-sm text-[#C4B5FD]">
             <Sparkles size={14} />
             <span>EvoCore Access</span>
           </div>
@@ -102,7 +102,7 @@ export default function LoginPage() {
               <h2 className="mt-2 text-2xl font-semibold">Launch EvoCore</h2>
             </div>
 
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
               <Bot size={22} />
             </div>
           </div>
@@ -201,7 +201,7 @@ function AccessItem({
   return (
     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
       <div className="flex items-start gap-3">
-        <div className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+        <div className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
           {icon}
         </div>
 

@@ -81,7 +81,7 @@ const SOCIALS = [
 export default function Footer() {
   return (
     <footer className="mt-20 border-t border-white/10 bg-[#07080D]">
-      <div className="border-b border-white/10 bg-[#6431FD] px-4 py-3 text-center text-xs font-black uppercase tracking-[0.18em] text-white">
+      <div className="border-b border-white/10 bg-[#8B39FB] px-4 py-3 text-center text-xs font-black uppercase tracking-[0.18em] text-white">
         EvoCore provides sports intelligence and analysis, not guaranteed outcomes
       </div>
 

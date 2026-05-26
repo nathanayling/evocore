@@ -10,7 +10,7 @@ export default function AccessPage() {
   return (
     <div className="mx-auto max-w-6xl px-6 py-14">
       <div className="max-w-3xl">
-        <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#6431FD]/10 px-3 py-1 text-sm text-[#C4B5FD]">
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#6431FD]/20 bg-[#8B39FB]/10 px-3 py-1 text-sm text-[#C4B5FD]">
           <ShieldCheck size={14} />
           EvoCore Access
         </div>
@@ -80,7 +80,7 @@ function AccessCard({
   return (
     <div className="evo-card p-6">
       <div className="flex items-start justify-between gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#6431FD]/10 text-[#C4B5FD]">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
           {icon}
         </div>
 
