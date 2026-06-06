@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import {
   ArrowRight,
   Bot,
   BrainCircuit,
   LineChart,
+  X,
   Zap,
 } from "lucide-react";
 
@@ -46,6 +50,8 @@ const capabilities = [
 ];
 
 export default function IntelligencePage() {
+  const [launchModalOpen, setLaunchModalOpen] = useState(false);
+
   return (
     <div className="overflow-hidden">
       <section className="relative border-b border-white/10">
@@ -69,11 +75,15 @@ export default function IntelligencePage() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/dashboard" className="evo-button-primary">
+              <button
+                type="button"
+                onClick={() => setLaunchModalOpen(true)}
+                className="evo-button-primary"
+              >
                 <Bot size={17} />
                 <span>Open Dashboard</span>
                 <ArrowRight size={17} />
-              </Link>
+              </button>
 
               <Link href="/access" className="evo-button-outline">
                 <span>Check Access</span>
@@ -174,6 +184,72 @@ export default function IntelligencePage() {
           </div>
         </div>
       </section>
+
+      {launchModalOpen && (
+        <LaunchEvoCoreModal onClose={() => setLaunchModalOpen(false)} />
+      )}
+    </div>
+  );
+}
+
+function LaunchEvoCoreModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+      <button
+        type="button"
+        aria-label="Close"
+        onClick={onClose}
+        className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+      />
+
+      <div className="relative z-[101] w-full max-w-lg rounded-3xl border border-white/10 bg-[#0B0D14] p-6 shadow-2xl">
+        <button
+          type="button"
+          onClick={onClose}
+          className="absolute right-5 top-5 rounded-full border border-white/10 bg-white/[0.04] p-2 text-white/60 transition hover:text-white"
+          aria-label="Close modal"
+        >
+          <X size={16} />
+        </button>
+
+        <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-400/25 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-orange-300">
+          <Bot size={14} />
+          Beta Infrastructure
+        </div>
+
+        <h2 className="pr-8 text-2xl font-semibold text-white">
+          EvoCore is preparing the next layer of sports intelligence.
+        </h2>
+
+        <p className="mt-4 text-sm leading-6 text-white/60">
+          EvoCore is currently being configured to enhance the AI infrastructure
+          powering our platform ecosystem. We’re preparing advanced data
+          pipelines, contextual intelligence models, automated insight
+          generation, and secure cross-platform access for RaceEvo, FootyEvo and
+          OddsEvo.
+        </p>
+
+        <p className="mt-3 text-sm leading-6 text-white/50">
+          Access will open once the intelligence layer has completed final
+          testing, performance validation and platform-level integration.
+        </p>
+
+        <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+          <div className="text-sm font-semibold text-white">Coming soon</div>
+          <div className="mt-1 text-xs leading-5 text-white/45">
+            AI orchestration, signal processing, platform memory, and
+            sports-specific intelligence modules are being prepared.
+          </div>
+        </div>
+
+        <button
+          type="button"
+          onClick={onClose}
+          className="mt-6 w-full rounded-xl bg-[#8B39FB] px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+        >
+          Got it
+        </button>
+      </div>
     </div>
   );
 }
