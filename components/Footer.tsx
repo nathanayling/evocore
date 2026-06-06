@@ -87,15 +87,23 @@ export default function Footer() {
 
       <div className="mx-auto grid w-full max-w-[1280px] gap-10 px-4 py-14 lg:grid-cols-[1.35fr_0.8fr_0.8fr_1.2fr] lg:px-6">
         <div>
-          <Link href="/" className="mb-5 flex items-center gap-3">
-            <Image
-              src="/logo.png"
-              alt="EvoCore"
-              width={240}
-              height={80}
-              className="h-14 w-auto object-contain"
-            />
-          </Link>
+<div className="mb-5">
+  <Link href="/" className="inline-block">
+    <Image
+      src="/logo.png"
+      alt="EvoCore"
+      width={240}
+      height={80}
+      className="h-14 w-auto object-contain"
+    />
+  </Link>
+
+  <div className="mt-2">
+    <span className="rounded-full border border-orange-400/30 bg-orange-500/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-orange-300">
+      Beta
+    </span>
+  </div>
+</div>
 
           <p className="max-w-md text-sm leading-7 text-white/58">
             EvoCore is the AI intelligence engine powering football, racing,

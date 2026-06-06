@@ -22,6 +22,7 @@ export default function Nav() {
   const [open, setOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [confirmSignOutOpen, setConfirmSignOutOpen] = useState(false);
+  const [launchModalOpen, setLaunchModalOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   const { user, logout } = useAuth();
@@ -63,6 +64,11 @@ export default function Nav() {
     closeMenu();
   }
 
+  function openLaunchModal() {
+    closeMenu();
+    setLaunchModalOpen(true);
+  }
+
   return (
     <>
       <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07080D]/80 backdrop-blur-xl">
@@ -76,6 +82,10 @@ export default function Nav() {
               priority
               className="h-14 w-auto object-contain"
             />
+
+            <span className="rounded-full border border-orange-400/30 bg-orange-500/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-orange-300">
+              Beta
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm md:flex">
@@ -94,13 +104,14 @@ export default function Nav() {
             </a>
 
             {!user ? (
-              <Link
-                href="/login"
+              <button
+                type="button"
+                onClick={openLaunchModal}
                 className="ml-2 inline-flex items-center gap-2 rounded-xl bg-[#8B39FB] px-4 py-2.5 text-sm font-semibold text-white transition hover:opacity-90"
               >
                 <Bot size={16} />
                 <span>Launch EvoCore</span>
-              </Link>
+              </button>
             ) : (
               <div className="relative ml-2" ref={dropdownRef}>
                 <button
@@ -165,7 +176,14 @@ export default function Nav() {
               <MobileItem href="/access" icon={<ShieldCheck size={16} />} label="Access" onClick={closeMenu} />
 
               {!user ? (
-                <MobileItem href="/login" icon={<Bot size={16} />} label="Launch EvoCore" onClick={closeMenu} />
+                <button
+                  type="button"
+                  onClick={openLaunchModal}
+                  className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-white/75 transition hover:bg-white/5 hover:text-white"
+                >
+                  <Bot size={16} />
+                  <span>Launch EvoCore</span>
+                </button>
               ) : (
                 <div className="mt-3 rounded-2xl border border-white/10 bg-white/[0.03] p-3">
                   <div className="mb-2 flex items-center gap-3 px-2 py-2">
@@ -197,6 +215,67 @@ export default function Nav() {
           </div>
         )}
       </header>
+
+      {launchModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={() => setLaunchModalOpen(false)}
+            className="absolute inset-0 bg-black/75 backdrop-blur-sm"
+          />
+
+          <div className="relative z-[101] w-full max-w-lg rounded-3xl border border-white/10 bg-[#0B0D14] p-6 shadow-2xl">
+            <button
+              type="button"
+              onClick={() => setLaunchModalOpen(false)}
+              className="absolute right-5 top-5 rounded-full border border-white/10 bg-white/[0.04] p-2 text-white/60 transition hover:text-white"
+              aria-label="Close modal"
+            >
+              <X size={16} />
+            </button>
+
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-orange-400/25 bg-orange-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-orange-300">
+              <Bot size={14} />
+              Beta Infrastructure
+            </div>
+
+            <h2 className="pr-8 text-2xl font-semibold text-white">
+              EvoCore is preparing the next layer of sports intelligence.
+            </h2>
+
+            <p className="mt-4 text-sm leading-6 text-white/60">
+              EvoCore is currently being configured to enhance the AI infrastructure
+              powering our platform ecosystem. We’re preparing advanced data pipelines,
+              contextual intelligence models, automated insight generation, and secure
+              cross-platform access for RaceEvo, FootyEvo and OddsEvo.
+            </p>
+
+            <p className="mt-3 text-sm leading-6 text-white/50">
+              Access will open once the intelligence layer has completed final testing,
+              performance validation and platform-level integration.
+            </p>
+
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+              <div className="text-sm font-semibold text-white">
+                Coming soon
+              </div>
+              <div className="mt-1 text-xs leading-5 text-white/45">
+                AI orchestration, signal processing, platform memory, and sports-specific
+                intelligence modules are being prepared.
+              </div>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setLaunchModalOpen(false)}
+              className="mt-6 w-full rounded-xl bg-[#8B39FB] px-4 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
 
       {confirmSignOutOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
@@ -237,9 +316,20 @@ export default function Nav() {
   );
 }
 
-function NavItem({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
+function NavItem({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
   return (
-    <Link href={href} className="flex items-center gap-2 text-white/65 transition hover:text-white">
+    <Link
+      href={href}
+      className="flex items-center gap-2 text-white/65 transition hover:text-white"
+    >
       <span className="text-white/60">{icon}</span>
       <span>{label}</span>
     </Link>

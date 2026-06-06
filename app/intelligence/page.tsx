@@ -1,12 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
   Bot,
   BrainCircuit,
-  Goal,
   LineChart,
-  Target,
-  Trophy,
   Zap,
 } from "lucide-react";
 
@@ -15,7 +13,8 @@ const intelligenceAreas = [
     title: "Football Intelligence",
     label: "FootyEvo",
     desc: "AI match analysis, fixture reasoning, form context, signal summaries, and risk checks.",
-    icon: Goal,
+    logo: "/footyevo-logo.png",
+    logoHeight: "h-14",
     href: "/dashboard/football",
     status: "Live",
   },
@@ -23,7 +22,8 @@ const intelligenceAreas = [
     title: "Racing Intelligence",
     label: "RaceEvo",
     desc: "Racecard analysis, horse profiles, likely winners, value angles, and structured signal cards.",
-    icon: Trophy,
+    logo: "/raceevo-logo.png",
+    logoHeight: "h-10",
     href: "/dashboard/racing",
     status: "Live",
   },
@@ -31,7 +31,8 @@ const intelligenceAreas = [
     title: "Odds Intelligence",
     label: "OddsEvo",
     desc: "Market movement, odds comparison, price shifts, value detection, and market signal tracking.",
-    icon: Target,
+    logo: "/oddsevo-logo.png",
+    logoHeight: "h-14",
     href: "/access",
     status: "Planned",
   },
@@ -84,48 +85,56 @@ export default function IntelligencePage() {
 
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-5 md:grid-cols-3">
-          {intelligenceAreas.map((item) => {
-            const Icon = item.icon;
-
-            return (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="evo-card evo-card-hover p-6"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
-                    <Icon size={22} />
-                  </div>
-
-                  <span
-                    className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                      item.status === "Live"
-                        ? "border border-green-400/20 bg-green-400/10 text-green-200"
-                        : "border border-white/10 bg-white/[0.03] text-white/45"
-                    }`}
-                  >
-                    {item.status}
-                  </span>
+          {intelligenceAreas.map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="evo-card evo-card-hover group p-6 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex h-20 items-center">
+                  <Image
+                    src={item.logo}
+                    alt={item.label}
+                    width={240}
+                    height={80}
+                    className={`${item.logoHeight} w-auto object-contain`}
+                  />
                 </div>
 
-                <div className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-[#C4B5FD]/80">
-                  {item.label}
-                </div>
+                <span
+                  className={`rounded-full px-3 py-1 text-xs font-semibold ${
+                    item.status === "Live"
+                      ? "border border-green-400/20 bg-green-400/10 text-green-200"
+                      : "border border-white/10 bg-white/[0.03] text-white/45"
+                  }`}
+                >
+                  {item.status}
+                </span>
+              </div>
 
-                <h2 className="mt-3 text-2xl font-semibold">{item.title}</h2>
+              <div className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-[#C4B5FD]/80">
+                {item.label}
+              </div>
 
-                <p className="mt-3 text-sm leading-6 text-white/55">
-                  {item.desc}
-                </p>
+              <h2 className="mt-3 text-2xl font-semibold">{item.title}</h2>
 
-                <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/65">
-                  <span>Open intelligence</span>
+              <p className="mt-3 text-sm leading-6 text-white/55">
+                {item.desc}
+              </p>
+
+              <div className="mt-6 flex items-center justify-between">
+                <span className="text-xs text-white/40">
+                  Powered by EvoCore
+                </span>
+
+                <span className="inline-flex items-center gap-2 rounded-xl bg-[#8B39FB] px-4 py-2.5 text-sm font-semibold text-white transition duration-200 group-hover:bg-[#9D5CFF]">
+                  Open
                   <ArrowRight size={15} />
-                </div>
-              </Link>
-            );
-          })}
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

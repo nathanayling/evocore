@@ -6,13 +6,10 @@ import {
   BrainCircuit,
   ChartNoAxesCombined,
   DatabaseZap,
-  Goal,
   Lock,
   MessageSquareText,
   ShieldCheck,
   Sparkles,
-  Target,
-  Trophy,
   Zap,
 } from "lucide-react";
 
@@ -21,21 +18,24 @@ const platforms = [
     name: "FootyEvo",
     label: "Football Intelligence",
     desc: "AI match analysis, team form, prediction reasoning, value signals, and football data chat.",
-    icon: Goal,
+    logo: "/footyevo-logo.png",
+    logoHeight: "h-14",
     href: "https://footyevo.com",
   },
   {
     name: "RaceEvo",
     label: "Racing Intelligence",
     desc: "Race cards, horse profiles, trainer form, pace setup, market movement, and AI race analysis.",
-    icon: Trophy,
+    logo: "/raceevo-logo.png",
+    logoHeight: "h-10",
     href: "https://raceevo.com",
   },
   {
     name: "OddsEvo",
     label: "Odds Intelligence",
     desc: "Odds movement, market signals, betting angles, value detection, and cross-market intelligence.",
-    icon: Target,
+    logo: "/oddsevo-logo.png",
+    logoHeight: "h-14",
     href: "https://oddsevo.com",
   },
 ];
@@ -82,7 +82,6 @@ export default function HomePage() {
       <section className="relative min-h-[calc(100vh-80px)] border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(100,49,253,0.32),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(100,49,253,0.14),transparent_28%),linear-gradient(to_bottom,#07080D,#07080D)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(7,8,13,0.25),#07080D_88%)]" />
-
         <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-[#6431FD] to-transparent" />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.05fr_.95fr] md:items-center md:py-28">
@@ -171,6 +170,7 @@ export default function HomePage() {
                       {prompts.map((prompt) => (
                         <button
                           key={prompt}
+                          type="button"
                           className="rounded-2xl border border-white/10 bg-white/[0.035] px-4 py-3 text-left text-sm text-white/65 transition hover:border-[#6431FD]/30 hover:bg-[#8B39FB]/10 hover:text-white"
                         >
                           {prompt}
@@ -232,46 +232,50 @@ export default function HomePage() {
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          {platforms.map((platform) => {
-            const Icon = platform.icon;
-
-            return (
-              <a
-                key={platform.name}
-                href={platform.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="evo-card evo-card-hover group p-6"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#6431FD]/20 bg-[#8B39FB]/10 text-[#C4B5FD]">
-                    <Icon size={22} />
-                  </div>
-
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/45">
-                    Powered by EvoCore
-                  </span>
+          {platforms.map((platform) => (
+            <a
+              key={platform.name}
+              href={platform.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="evo-card evo-card-hover group p-6 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div className="flex h-20 items-center">
+                  <Image
+                    src={platform.logo}
+                    alt={platform.name}
+                    width={240}
+                    height={80}
+                    className={`${platform.logoHeight} w-auto object-contain`}
+                  />
                 </div>
 
-                <div className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-[#C4B5FD]/80">
-                  {platform.label}
-                </div>
+                <span className="rounded-full border border-emerald-500/20 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-300">
+                  Powered
+                </span>
+              </div>
 
-                <h3 className="mt-3 text-2xl font-semibold">
-                  {platform.name}
-                </h3>
+              <div className="mt-5 text-xs font-semibold uppercase tracking-[0.24em] text-[#C4B5FD]/80">
+                {platform.label}
+              </div>
 
-                <p className="mt-3 text-sm leading-6 text-white/58">
-                  {platform.desc}
-                </p>
+              <h3 className="mt-3 text-2xl font-semibold">{platform.name}</h3>
 
-                <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-white/65 group-hover:text-white">
-                  <span>Visit {platform.name}</span>
+              <p className="mt-3 text-sm leading-6 text-white/58">
+                {platform.desc}
+              </p>
+
+              <div className="mt-6 flex items-center justify-between">
+                <span className="text-xs text-white/40">Open platform</span>
+
+                <span className="inline-flex items-center gap-2 rounded-xl bg-[#8B39FB] px-4 py-2.5 text-sm font-semibold text-white transition duration-200 group-hover:bg-[#9D5CFF]">
+                  Visit {platform.name}
                   <ArrowRight size={15} />
-                </div>
-              </a>
-            );
-          })}
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </section>
 
